@@ -3,5 +3,8 @@
     "version": "1.0.0",
     "require": {
         "php": ">=5.0.0"
+    },
+    "autoload": {
+        "classmap": [""]
     }
 }
