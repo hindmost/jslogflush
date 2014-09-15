@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JsLogFlush Test 2</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <script type="text/javascript" src="test.php?buffSize=1000&logTimeshifts=1"></script>
+    </head>
+    <body>
+
+        <div class="container">
+
+<h1>Console Logging Functions <a href="http://www.joehewitt.com/software/firebug/docs.php"><span class="glyphicon glyphicon-link"></span></a></h1>
+
+<p>FireBug makes a console object available to all web pages.  This object has the following functions:</p>
+
+<h3>Basic Logging</h3>
+
+<div><b>console.log("message" [,objects])</b> - Logs a string to the console.  The string may contain any of the patterns described below in the "String Formatting" section.  The objects passed after the string will be substituted for each of the patterns in the string in order.</div>
+
+<h3>Logging Levels</h3>
+
+<p>It is often useful to separate messages according to different levels of severity.  There are four different functions for this purpose.  In addition to the visual separation, these functions are also different from <code>log</code> in that they automatically include a link to the line number in the source where they are called.</p>
+
+<div><b>console.debug("message" [,objects])</b> - Logs a debug message.</div>
+<div><b>console.info("message" [,objects])</b> - Logs an informative message.</div>
+<div><b>console.warn("message" [,objects])</b> - Logs a warning.</div>
+<div><b>console.error("message" [,objects])</b> - Logs an error.</div>
+
+<h3>Assertions</h3>
+
+<p>Assertions are a great way to enforce rules in your code.  The console object includes a set a common types of assertion functions, and also allows you to write your own.</p>
+
+<div><b>console.assert(a, "message" [,objects])</b> - Asserts that an <code>a</code> is true.</div>
+<div><b>console.assertEquals(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is equal to <code>b</code>.</div>
+<div><b>console.assertNotEquals(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is not equal to <code>b</code>.</div>
+<div><b>console.assertGreater(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is greater than <code>b</code>.</div>
+<div><b>console.assertNotGreater(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is not greater than <code>b</code>.</div>
+<div><b>console.assertLess(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is less than <code>b</code>.</div>
+<div><b>console.assertNotLess(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is not less than <code>b</code>.</div>
+<div><b>console.assertContains(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is in the array <code>b</code>.</div>
+<div><b>console.assertNotContains(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is not in the array <code>b</code>.</div>
+<div><b>console.assertTrue(a, "message" [,objects])</b> - Asserts that <code>a</code> is equal to <code>true</code>.</div>
+<div><b>console.assertFalse(a, "message" [,objects])</b> - Asserts that <code>a</code> is equal to <code>false</code>.</div>
+<div><b>console.assertNull(a, "message" [,objects])</b> - Asserts that <code>a</code> is equal to <code>null</code>.</div>
+<div><b>console.assertNotNull(a, "message" [,objects])</b> - Asserts that <code>a</code> is not equal to <code>null</code>.</div>
+<div><b>console.assertUndefined(a, "message" [,objects])</b> - Asserts that <code>a</code> is equal to <code>undefined</code>.</div>
+<div><b>console.assertNotUndefined(a, "message" [,objects])</b> - Asserts that <code>a</code> is not equal to <code>undefined</code>.</div>
+<div><b>console.assertInstanceOf(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is an instance of type <code>b</code>.</div>
+<div><b>console.assertNotInstanceOf(a, b, "message" [,objects])</b> - Asserts that <code>a</code> is not an instance of type <code>b</code>.</div>
+<div><b>console.assertTypeOf(a, b, "message" [,objects])</b> - Asserts that the type of <code>a</code> is equal to the string <code>b</code>.</div>
+<div><b>console.assertNotTypeOf(a, b, "message" [,objects])</b> - Asserts that the type of <code>a</code> is not equal to the string <code>b</code>.</div>
+
+<h3>Measurement</h3>
+
+<p>The following functions allow you to measure certain aspects of your code.</p>
+
+<div><b>console.time("name")</b> - Begins a timer and gives it a unique name.</div>
+<div><b>console.timeEnd("name")</b> - Stops the timer with the given name and logs the number of milliseconds that have ellapsed since it was started.</div>
+<div><b>console.count("name")</b> - Logs the number of times that the line of code where this is called has been executed.</div>
+
+<h2>String Formatting</h2>
+
+<p>All of the console logging functions can format a string with any of the following patterns:
+
+<div><b>%s</b> - Formats the object as a string.</div>
+<div><b>%d, %i, %l, %f</b> - Formats the object as a number.</div>
+<div><b>%o</b> - Formats the object as a hyperlink to the inspector.</div>
+<div><b>%1.o, %2.0, etc..</b> - Formats the object as an interactive table of its properties.</div>
+<div><b>%.o</b> - Formats the object as an array of its property names.</div>
+<div><b>%x</b> - Formats the object as an interactive XML markup tree.</div>
+<div><b>%1.x, %2.x, etc..</b> - Formats the object as an interactive XML markup tree with <i>n</i> levels expanded.</div>
+
+<p>If you need to include a real % symbol, you can escape it with a backslash like so: "\%".
+
+<h2>Command Line Functions</h2>
+
+<p>The following built-in functions can be accessed from the command line:</p>
+
+<div><b>$("id")</b> - A shortcut for document.getElementById().</div>
+<div><b>$$("css")</b> - Returns an array of elements that match a CSS selector.</div>
+<div><b>$x("xpath")</b> - Returns an array of elements that match an XPath selector.</div>
+<div><b>$0</b> - Variable containing the most recently inspected object .</div>
+<div><b>$1</b> - Variable containing the next most recently inspected object .</div>
+<div><b>$n(5)</b> - Returns the nth most recently inspected object that has been inspected.</div>
+<div><b>inspect(object)</b> - Displays an object in the Inspector.</div>
+<div><b>dir(object)</b> - Returns an array of property names on an object.</div>
+<div><b>clear()</b> - Clears the console.</div>
+
+        </div>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+$(document).ready(function() {
+    // Test 2: Testing integrity of logging/flushing content:
+    // Here we get content of ".container" element, split it into random-length chunks
+    // and flush/send them to the flush processing script.
+    // Original content can be restored from target .log file by doing replacement
+    // with the following regexp: /\n\d+\t/
+    var nMax = 256;
+    var text = $('.container').html(), len = text.length;
+    console.log('LOGGED TEXT (length=%d):', len);
+    for (var i = 0; i < len; i += n) {
+        var n = Math.min(Math.round(Math.random()* nMax), len - i);
+        console.log(text.substr(i, n));
+    }
+});
+        </script>
+
+    </body>
+</html>

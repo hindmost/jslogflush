@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JsLogFlush Test 1</title>
+        <script type="text/javascript" src="test.php?logTimeshifts=0"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+// Test 1: Logging values of complex JS variables
+// Here we define two JS variables
+// and flush/send their values to the flush processing script
+var x = 'Some text';
+var obj = {
+    text: 'Lorem ipsum',
+    num: 42,
+    arr: ['one', 'two', 4, 1, 2, 'three', true, false],
+    subObj: {
+        title: 'Main Item',
+        color: 'black',
+        size: 3,
+        weight: '1.5 lbs',
+        subSubObj: [
+            {
+                title: 'Sub Item 1',
+                color: 'red',
+                size: 3
+            },
+            {
+                title: 'Sub Item 2',
+                color: 'silver',
+                size: 4
+            },
+            {
+                title: 'Sub Item 4',
+                color: 'blue',
+                size: 3
+            }
+        ]
+    },
+    date: new Date(),
+    flag: true,
+    str: String('some string'),
+    regex: RegExp('(\\d*)\\s*(\\d*)','ig'),
+    callback: function (a, b) { return a < b? a : b; },
+    func: new Function('a', 'b', 'return a + b')
+};
+console.log('LOGGED DATA:');
+console.log('x="%s"', x);
+console.log('obj: %o', obj);
+console.log('obj(as JSON): %o', JSON.stringify(obj));
+        </script>
+    </body>
+</html>
