@@ -6,12 +6,13 @@ _JS LogFlush_ is an integrated JavaScript logging solution which include:
 * log storage system - on server side.
 
 [Demo (logger + manager)](http://demos.savreen.com/jslogflush-manager/) (login credentials: demo/demo) | [Demo sources](https://github.com/hindmost/jslogflush-manager)
+
 [Review article in russian](http://savreen.com/krossbrauzernaya-alternativa-console-log-ili-kak-ya-perestal-volnovatsya-i-polyubil-klientskuyu-otladku/)
 
 
 Key Features
 -------------
-* **Extremely easy to use**. All that's needed to use _JS LogFlush_ in your web applications is include its processing script as JavaScript. No need to instantiate special JS classes. No need to use special syntax to call logging functionality. You can use well-known console.log syntax. Each console.log call will be automatically substituted with _JS LogFlush_ functionality. This mean you don't need to touch already written JavaScript code containing console.log calls. _JS LogFlush_ starts to work immediately once you include its processing script in your web page.
+* **Easy to use**. All that's needed to use _JS LogFlush_ in your web applications is include its processing script as JavaScript. No need to instantiate special JS classes. No need to use special syntax to call logging functionality. You can use well-known console.log syntax. Each console.log call will be automatically substituted with _JS LogFlush_ functionality. This mean you don't need to touch already written JavaScript code containing console.log calls. _JS LogFlush_ starts to work immediately once you include its processing script in your web page.
 * **Automated and invisible**. No need to place special button/link/etc on your web page to have possibility to save/download prepared logs. Instead of outputting logs into browser's console, _JS LogFlush_ save all logged data on your server automatically and invisibly for end user so he/she couldn't even guess about such hidden work. However you have to remember: it's only for debug purposes. You should not use it on live (production) sites.
 * **Lightweight and dependency-free**. The only requirement is standard PHP 5+ configuration on server side as well as JavaScript support on client.
 
