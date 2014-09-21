@@ -257,7 +257,7 @@ CODE;
             $this->iStamp0. "\n".
             substr(self::getServerVar('REMOTE_ADDR'), 0, 20). "\n".
             substr(self::getServerVar('HTTP_USER_AGENT'), 0, self::MAXLEN_USERAGENT). "\n".
-            $this->getFileHeadSeparator()
+            "\n\n"
         );
         $a_replc = array(
             'ID' => $id,
@@ -328,14 +328,6 @@ CODE;
             return false;
         $arr = array_values(array_filter(explode("\n", $s), 'trim'));
         return count($arr) >= 4? array_slice($arr, 0, 4) : false;
-    }
-
-    /**
-     * get head section separator used in log session files (might be overridden in a subclass)
-     * @return string
-     */
-    function getFileHeadSeparator() {
-        return "\n\n\n";
     }
 
     /**
