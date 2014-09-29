@@ -7,6 +7,8 @@ _JS LogFlush_ is an integrated JavaScript logging solution which include:
 
 [Demo (logger + manager)](http://demos.savreen.com/jslogflush-manager/) (login credentials: demo/demo) | [Demo sources](https://github.com/hindmost/jslogflush-manager)
 
+[Screencast: How To Use](http://youtu.be/AFfTu2F3leM)
+
 [Review article in russian](http://savreen.com/krossbrauzernaya-alternativa-console-log-ili-kak-ya-perestal-volnovatsya-i-polyubil-klientskuyu-otladku/)
 
 
